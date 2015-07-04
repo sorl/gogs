@@ -1099,12 +1099,12 @@ var ErrPullRequestNotExist = errors.New("Pull request does not exist")
 
 // PullRepo represents relation between pull request and repositories.
 type PullRepo struct {
-	ID           int64 `xorm:"pk autoincr"`
-	PullID       int64 `xorm:"INDEX"`
-	FromRepoID   int64 `xorm:"UNIQUE(s)"`
-	ToRepoID     int64 `xorm:"UNIQUE(s)"`
-	FromBranch   string
-	ToBranch     string
+	ID           int64  `xorm:"pk autoincr"`
+	PullID       int64  `xorm:"INDEX"`
+	FromRepoID   int64  `xorm:"UNIQUE(s)"`
+	ToRepoID     int64  `xorm:"UNIQUE(s)"`
+	FromBranch   string `xorm:"UNIQUE(s)"`
+	ToBranch     string `xorm:"UNIQUE(s)"`
 	CanAutoMerge bool
 }
 
